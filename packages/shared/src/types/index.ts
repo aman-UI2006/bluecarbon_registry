@@ -7,7 +7,8 @@ export const UserRoleSchema = z.enum([
   'VERIFIER',
   'ADMIN',
   'INDUSTRY',
-  'GOVERNMENT'
+  'GOVERNMENT',
+  'FIELD_COLLECTOR'
 ]);
 
 export const UserSchema = z.object({
@@ -86,6 +87,7 @@ export const CarbonCreditSchema = z.object({
   amount: z.number().positive(),
   status: z.enum(['PENDING', 'ISSUED', 'TRADED', 'RETIRED']),
   issuedAt: z.date().optional(),
+  retiredAt: z.date().optional(),
   blockchainTxHash: z.string().optional()
 });
 

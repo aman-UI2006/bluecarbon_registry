@@ -7,6 +7,11 @@ import { ProjectDetail } from './pages/ProjectDetail'
 import { Verifications } from './pages/Verifications'
 import { Analytics } from './pages/Analytics'
 import { Settings } from './pages/Settings'
+import { AdminDashboard } from './pages/AdminDashboard'
+import { DataManagement } from './pages/DataManagement'
+import { DataUpload } from './components/DataUpload'
+import { SpeciesGallery } from './components/SpeciesGallery'
+import { DataValidation } from './pages/DataValidation'
 import { Login } from './pages/Login'
 import { useAuth } from './hooks/useAuth'
 import { LoadingSpinner } from './components/LoadingSpinner'
@@ -33,6 +38,11 @@ function App() {
           <Route path="/verifications" element={<Verifications />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/data-management" element={<DataManagement />} />
+          <Route path="/data-management/upload" element={<DataUpload />} />
+          <Route path="/data-management/species" element={<SpeciesGallery />} />
+          <Route path="/data-management/validation" element={<DataValidation />} />
           <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Routes>
       </Layout>

@@ -4,8 +4,6 @@ import {
   VStack,
   HStack,
   Text,
-  Avatar,
-  Badge,
   Heading,
   useColorModeValue,
   Box,

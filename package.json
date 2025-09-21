@@ -16,19 +16,31 @@
     "clean": "turbo run clean",
     "mobile": "cd apps/mobile && npm run start",
     "web": "cd apps/web && npm run dev",
-    "shared:build": "cd packages/shared && npm run build"
+    "shared:build": "cd packages/shared && npm run build",
+    "contracts:compile": "cd contracts && npm run compile",
+    "contracts:deploy": "cd contracts && npm run deploy:polygon",
+    "contracts:test": "cd contracts && npm run test",
+    "deploy": "node scripts/deploy.js",
+    "setup": "npm install && npm run shared:build && npm run contracts:compile",
+    "start:all": "concurrently \"npm run web\" \"npm run mobile\"",
+    "build:all": "npm run shared:build && npm run build",
+    "postinstall": "npm run shared:build"
   },
   "devDependencies": {
-    "turbo": "^1.10.16",
     "@typescript-eslint/eslint-plugin": "^6.7.4",
     "@typescript-eslint/parser": "^6.7.4",
     "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "prettier": "^3.0.3",
+    "turbo": "^1.10.16",
     "typescript": "^5.2.2"
   },
   "engines": {
     "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "react-icons": "^5.5.0",
+    "concurrently": "^8.2.0"
   }
 }

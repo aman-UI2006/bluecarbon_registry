@@ -20,6 +20,8 @@ import {
   FiStar,
   FiSettings,
   FiCheckSquare,
+  FiShield,
+  FiDatabase,
 } from 'react-icons/fi'
 import { IconType } from 'react-icons'
 import { useAuth } from '../../hooks/useAuth'
@@ -42,9 +44,19 @@ export function Sidebar({ onClose, ...rest }: SidebarProps) {
     { name: t('navigation.dashboard'), icon: FiHome, path: '/dashboard' },
     { name: t('navigation.projects'), icon: FiCompass, path: '/projects' },
     { name: t('navigation.verifications'), icon: FiCheckSquare, path: '/verifications' },
+    { name: 'Data Management', icon: FiDatabase, path: '/data-management' },
     { name: t('navigation.analytics'), icon: FiTrendingUp, path: '/analytics' },
     { name: t('navigation.settings'), icon: FiSettings, path: '/settings' },
   ]
+
+  // Add admin link for admin users
+  const adminLinkItems: Array<LinkItemProps> = [
+    { name: 'Admin Dashboard', icon: FiShield, path: '/admin' },
+  ]
+
+  const allLinkItems = user?.role === 'ADMIN' 
+    ? [...LinkItems, ...adminLinkItems]
+    : LinkItems
 
   return (
     <Box
@@ -78,7 +90,7 @@ export function Sidebar({ onClose, ...rest }: SidebarProps) {
       </Flex>
 
       <VStack spacing={1} align="stretch" px={4}>
-        {LinkItems.map((link) => (
+        {allLinkItems.map((link) => (
           <NavItem key={link.name} icon={link.icon} path={link.path}>
             {link.name}
           </NavItem>

@@ -22,7 +22,6 @@ import {
   StatNumber,
   StatHelpText,
 } from '@chakra-ui/react'
-import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
 import { FiMapPin, FiCalendar, FiUser, FiDownload } from 'react-icons/fi'
 import { motion } from 'framer-motion'
@@ -32,7 +31,6 @@ const MotionBox = motion(Box)
 
 export function ProjectDetail() {
   const { id } = useParams()
-  const { t } = useTranslation()
   const cardBg = useColorModeValue('white', 'gray.800')
 
   // Mock project data
@@ -47,7 +45,7 @@ export function ProjectDetail() {
     status: 'active',
     owner: 'Sundarbans Foundation',
     createdAt: '2024-01-15',
-    coordinates: [22.2587, 88.9414],
+    coordinates: [22.2587, 88.9414] as [number, number],
   }
 
   const stats = [

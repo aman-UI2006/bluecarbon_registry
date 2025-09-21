@@ -8,7 +8,7 @@ import {
   Icon,
   SimpleGrid,
 } from '@chakra-ui/react'
-import { FiPlus, FiCheck, FiBarChart3, FiDownload } from 'react-icons/fi'
+import { FiPlus, FiCheck, FiBarChart, FiDownload } from 'react-icons/fi'
 
 const actions = [
   {
@@ -25,7 +25,7 @@ const actions = [
   },
   {
     label: 'View Analytics',
-    icon: FiBarChart3,
+    icon: FiBarChart,
     colorScheme: 'purple',
     action: () => console.log('View analytics'),
   },

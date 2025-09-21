@@ -29,7 +29,7 @@ export function useAuth() {
     return () => clearTimeout(timer)
   }, [])
 
-  const login = async (phone: string, otp: string) => {
+  const login = async (phone: string, _otp: string) => {
     // Mock login
     setIsLoading(true)
     await new Promise(resolve => setTimeout(resolve, 1000))

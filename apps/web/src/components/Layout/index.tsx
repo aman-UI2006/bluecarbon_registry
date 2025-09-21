@@ -1,7 +1,6 @@
 import { ReactNode } from 'react'
 import {
   Box,
-  Flex,
   useDisclosure,
   Drawer,
   DrawerContent,

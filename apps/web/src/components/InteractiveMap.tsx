@@ -46,7 +46,7 @@ export function InteractiveMap({
 
     // Add markers for projects
     projects.forEach(project => {
-      const marker = L.marker(project.coords as [number, number])
+      L.marker(project.coords as [number, number])
         .addTo(map)
         .bindPopup(`
           <div style="font-family: Inter, sans-serif;">

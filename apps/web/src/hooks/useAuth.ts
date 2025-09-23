@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { User } from '@bluecarbon/shared'
+import { User, UserRole } from '@bluecarbon/shared'
 
 // Mock auth hook - replace with actual Firebase auth
 export function useAuth() {
@@ -7,16 +7,15 @@ export function useAuth() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Simulate auth check
     const timer = setTimeout(() => {
-      // Mock user for development
+      const storedRole = (localStorage.getItem('mock_role') as UserRole) || 'ADMIN'
       setUser({
         id: '1',
         name: 'John Doe',
         email: 'john@example.com',
         phone: '+91-9876543210',
-        role: 'ADMIN',
-        organization: 'BlueCarbon Foundation',
+        role: storedRole,
+        organization: storedRole === 'ADMIN' ? 'NCCR' : 'BlueCarbon Foundation',
         region: 'Maharashtra',
         language: 'en',
         isVerified: true,
@@ -24,8 +23,7 @@ export function useAuth() {
         updatedAt: new Date()
       })
       setIsLoading(false)
-    }, 1000)
-
+    }, 500)
     return () => clearTimeout(timer)
   }, [])
 
@@ -33,13 +31,14 @@ export function useAuth() {
     // Mock login
     setIsLoading(true)
     await new Promise(resolve => setTimeout(resolve, 1000))
+    const storedRole = (localStorage.getItem('mock_role') as UserRole) || 'ADMIN'
     setUser({
       id: '1',
       name: 'John Doe',
       email: 'john@example.com',
       phone,
-      role: 'ADMIN',
-      organization: 'BlueCarbon Foundation',
+      role: storedRole,
+      organization: storedRole === 'ADMIN' ? 'NCCR' : 'BlueCarbon Foundation',
       region: 'Maharashtra',
       language: 'en',
       isVerified: true,
@@ -47,6 +46,13 @@ export function useAuth() {
       updatedAt: new Date()
     })
     setIsLoading(false)
+  }
+
+  const switchRole = (role: UserRole) => {
+    localStorage.setItem('mock_role', role)
+    if (user) {
+      setUser({ ...user, role, organization: role === 'ADMIN' ? 'NCCR' : 'BlueCarbon Foundation' })
+    }
   }
 
   const logout = () => {
@@ -57,6 +63,7 @@ export function useAuth() {
     user,
     isLoading,
     login,
-    logout
+    logout,
+    switchRole
   }
 }

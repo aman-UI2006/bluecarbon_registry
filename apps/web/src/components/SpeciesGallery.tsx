@@ -2,7 +2,23 @@
  * SpeciesGallery Component for Blue Carbon MRV
  * 
  * INSTRUCTIONS FOR DEVELOPER:
- * - Replace placeholder image URLs with real species images from GBIF/iNaturalist
+ * 
+ * IMAGE PLACEHOLDERS - READY TO REPLACE:
+ * The following 6 species now have placeholder images that can be easily replaced:
+ * 1. Red Mangrove (Rhizophora mucronata) - Blue placeholder
+ * 2. Grey Mangrove (Avicennia marina) - Green placeholder  
+ * 3. Paddle Grass (Halophila ovalis) - Teal placeholder
+ * 4. Glasswort (Salicornia brachiata) - Light green placeholder
+ * 5. Large-leafed Orange Mangrove (Bruguiera gymnorrhiza) - Orange placeholder
+ * 6. Serrated Ribbon Grass (Cymodocea serrulata) - Blue placeholder
+ * 
+ * TO REPLACE WITH REAL IMAGES:
+ * 1. Find high-quality images from GBIF (https://www.gbif.org/) or iNaturalist (https://www.inaturalist.org/)
+ * 2. Update the imageUrl field in apps/web/src/data/blueCarbonData.json
+ * 3. Ensure images are optimized (400x300px recommended)
+ * 4. Use HTTPS URLs for better security
+ * 
+ * ADDITIONAL IMPROVEMENTS NEEDED:
  * - Integrate with actual species databases for real-time data
  * - Add image optimization and lazy loading for better performance
  * - Implement advanced filtering (by carbon potential, conservation status, etc.)
@@ -369,12 +385,17 @@ export function SpeciesGallery() {
                               display="flex"
                               alignItems="center"
                               justifyContent="center"
+                              border="2px dashed"
+                              borderColor="gray.300"
                             >
-                              <VStack>
-                                <Text fontSize="sm" color="gray.500">
-                                  Image placeholder
+                              <VStack spacing={2}>
+                                <Text fontSize="sm" color="gray.600" fontWeight="medium">
+                                  {species.commonName}
                                 </Text>
-                                <Text fontSize="xs" color="gray.400" textAlign="center">
+                                <Text fontSize="xs" color="gray.500" fontStyle="italic">
+                                  {species.scientificName}
+                                </Text>
+                                <Text fontSize="xs" color="gray.400" textAlign="center" maxW="200px">
                                   Replace with real images from GBIF/iNaturalist
                                 </Text>
                               </VStack>
@@ -469,9 +490,19 @@ export function SpeciesGallery() {
                               display="flex"
                               alignItems="center"
                               justifyContent="center"
+                              border="2px dashed"
+                              borderColor="gray.300"
                             >
-                              <VStack>
-                                <Text color="gray.500">Image placeholder</Text>
+                              <VStack spacing={2}>
+                                <Text fontSize="lg" color="gray.600" fontWeight="medium">
+                                  {selectedSpecies.commonName}
+                                </Text>
+                                <Text fontSize="sm" color="gray.500" fontStyle="italic">
+                                  {selectedSpecies.scientificName}
+                                </Text>
+                                <Text fontSize="xs" color="gray.400" textAlign="center">
+                                  Replace with real images from GBIF/iNaturalist
+                                </Text>
                               </VStack>
                             </Box>
                           }

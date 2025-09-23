@@ -15,6 +15,8 @@ import { DataValidation } from './pages/DataValidation'
 import { Login } from './pages/Login'
 import { useAuth } from './hooks/useAuth'
 import { LoadingSpinner } from './components/LoadingSpinner'
+import { UserProfile } from './pages/UserProfile'
+import { AdminProfile } from './pages/AdminProfile'
 
 function App() {
   const { user, isLoading } = useAuth()
@@ -33,6 +35,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/admin/profile" element={<AdminProfile />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="/verifications" element={<Verifications />} />

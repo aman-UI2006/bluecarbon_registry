@@ -42,6 +42,7 @@ export function Sidebar({ onClose, ...rest }: SidebarProps) {
   
   const LinkItems: Array<LinkItemProps> = [
     { name: t('navigation.dashboard'), icon: FiHome, path: '/dashboard' },
+    { name: 'My Profile', icon: FiStar, path: '/profile' },
     { name: t('navigation.projects'), icon: FiCompass, path: '/projects' },
     { name: t('navigation.verifications'), icon: FiCheckSquare, path: '/verifications' },
     { name: 'Data Management', icon: FiDatabase, path: '/data-management' },
@@ -51,7 +52,7 @@ export function Sidebar({ onClose, ...rest }: SidebarProps) {
 
   // Add admin link for admin users
   const adminLinkItems: Array<LinkItemProps> = [
-    { name: 'Admin Dashboard', icon: FiShield, path: '/admin' },
+    { name: 'Admin Profile', icon: FiShield, path: '/admin/profile' },
   ]
 
   const allLinkItems = user?.role === 'ADMIN' 

@@ -186,7 +186,7 @@
       "storedCarbonPercentage": 12.5,
       "geographicalDistribution": ["West Bengal", "Odisha", "Andhra Pradesh"],
       "ecosystemType": "Mangrove",
-      "imageUrl": "/images/mangrove_species_001.jpg",
+      "imageUrl": "https://placeholder.com/400x300/4A90E2/FFFFFF?text=Red+Mangrove+(Rhizophora+mucronata)",
       "dataSource": "GBIF - Replace with real species images from GBIF/iNaturalist",
       "carbonPotential": "High",
       "conservationStatus": "Least Concern"
@@ -204,7 +204,7 @@
       "storedCarbonPercentage": 10.8,
       "geographicalDistribution": ["Gujarat", "Maharashtra", "Karnataka", "Kerala"],
       "ecosystemType": "Mangrove",
-      "imageUrl": "/images/mangrove_species_002.jpg",
+      "imageUrl": "https://placeholder.com/400x300/7ED321/FFFFFF?text=Grey+Mangrove+(Avicennia+marina)",
       "dataSource": "iNaturalist - Replace with real species images",
       "carbonPotential": "High",
       "conservationStatus": "Least Concern"
@@ -222,7 +222,7 @@
       "storedCarbonPercentage": 8.3,
       "geographicalDistribution": ["Kerala", "Tamil Nadu", "Andhra Pradesh"],
       "ecosystemType": "Seagrass",
-      "imageUrl": "/images/seagrass_species_001.jpg",
+      "imageUrl": "https://placeholder.com/400x300/50E3C2/FFFFFF?text=Paddle+Grass+(Halophila+ovalis)",
       "dataSource": "GBIF - Replace with real species images",
       "carbonPotential": "Medium",
       "conservationStatus": "Least Concern"
@@ -240,7 +240,7 @@
       "storedCarbonPercentage": 6.7,
       "geographicalDistribution": ["Gujarat", "Rajasthan", "Haryana"],
       "ecosystemType": "Salt Marsh",
-      "imageUrl": "/images/saltmarsh_species_001.jpg",
+      "imageUrl": "https://placeholder.com/400x300/B8E986/FFFFFF?text=Glasswort+(Salicornia+brachiata)",
       "dataSource": "iNaturalist - Replace with real species images",
       "carbonPotential": "Medium",
       "conservationStatus": "Least Concern"
@@ -258,7 +258,7 @@
       "storedCarbonPercentage": 14.2,
       "geographicalDistribution": ["West Bengal", "Odisha", "Andhra Pradesh"],
       "ecosystemType": "Mangrove",
-      "imageUrl": "/images/mangrove_species_003.jpg",
+      "imageUrl": "https://placeholder.com/400x300/F5A623/FFFFFF?text=Large-leafed+Orange+Mangrove+(Bruguiera+gymnorrhiza)",
       "dataSource": "GBIF - Replace with real species images",
       "carbonPotential": "Very High",
       "conservationStatus": "Near Threatened"
@@ -276,7 +276,7 @@
       "storedCarbonPercentage": 7.9,
       "geographicalDistribution": ["Tamil Nadu", "Kerala", "Karnataka"],
       "ecosystemType": "Seagrass",
-      "imageUrl": "/images/seagrass_species_002.jpg",
+      "imageUrl": "https://placeholder.com/400x300/4A90E2/FFFFFF?text=Serrated+Ribbon+Grass+(Cymodocea+serrulata)",
       "dataSource": "iNaturalist - Replace with real species images",
       "carbonPotential": "Medium",
       "conservationStatus": "Least Concern"
